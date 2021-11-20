@@ -18,3 +18,5 @@ jobs:
           xcodebuild test -scheme SwiftAudio-Example -destination "${destination}" -enableCodeCoverage YES
         env:
           destination: ${{ matrix.destination }}
+      - name: Push Repo to Cocoapods
+        run: pod trunk push SwiftAudioEx.podspec --allow-warnings
