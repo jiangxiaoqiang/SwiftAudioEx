@@ -18,6 +18,7 @@ jobs:
           xcodebuild test -scheme SwiftAudio-Example -destination "${destination}" -enableCodeCoverage YES
         env:
           destination: ${{ matrix.destination }}
+          
       - name: Get Sesssion
         run: pod trunk register ${{ secrets.COCOPOD_GMAIL }} ${{ secrets.COCOPOD_USERNAME }} --verbose
       - name: Push Repo to Cocoapods
